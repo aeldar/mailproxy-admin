@@ -60,4 +60,25 @@ class FeatureContext extends MinkContext
 //        $container->get('some_service')->doSomethingWith($argument);
 //    }
 //
+
+    /**
+     * @When /^I go to "(?P<page>[^"]+)" and enter "(?P<login>[^"]+)" and "(?P<password>[^"]+)" to browser password box$/
+     */
+    public function iGoToPageAndEnterLoginAndPasswordToBrowserPasswordBox($page, $login, $password)
+    {
+        //throw new PendingException();
+        $this->getSession()->setBasicAuth($login, $password);
+        $this->getSession()->visit($this->locatePath($page));
+    }
+
+    /**
+     * @Given /^a clean browser session$/
+     */
+    public function aCleanBrowserSession()
+    {
+        $this->getSession()->reset();
+        $this->getSession()->restart();
+    }
+
+
 }
