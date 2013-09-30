@@ -19,7 +19,6 @@
  *
  */
 
-class DovecotHmacmd5Encoder {
 
 /* Convert a 32-bit number to a hex string with ls-byte first
  */
@@ -196,4 +195,3 @@ for ($i=0; $i<10; $i++) {
 }
 */
 
-}
