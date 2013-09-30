@@ -1,0 +1,4 @@
+efc_mailproxy:
+    resource: "@EFCMailproxyBundle/Resources/config/routing.yml"
+    prefix:   /
+
