@@ -1,10 +1,11 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "efc/mailproxy-admin",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Mailproxy admin for EFC",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "": "src/" },
+        "files": ["src/lib/dovecot_hmacmd5.php"]
     },
     "require": {
         "php": ">=5.3.3",
@@ -19,6 +20,14 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "behat/behat": "2.5.*",
+        "behat/symfony2-extension": "*",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*",
+        "behat/common-contexts": "*"
     },
     "scripts": {
         "post-install-cmd": [

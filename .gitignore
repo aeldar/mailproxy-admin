@@ -11,4 +11,3 @@
 /composer.phar
 /composer.lock
 /.idea/
-!vendor/dovecot_hmacmd5.php
