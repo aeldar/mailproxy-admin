@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\DemoBundle\Controller;
+namespace EFC\MailproxyBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -8,13 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-/**
- * @Route("/demo/secured")
- */
 class SecuredController extends Controller
 {
     /**
-     * @Route("/login", name="_demo_login")
+     * @Route("/login", name="efc_login")
      * @Template()
      */
     public function loginAction(Request $request)
@@ -32,7 +29,7 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/login_check", name="_security_check")
+     * @Route("/login_check", name="efc_security_check")
      */
     public function securityCheckAction()
     {
@@ -40,7 +37,7 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/logout", name="_demo_logout")
+     * @Route("/logout", name="efc_logout")
      */
     public function logoutAction()
     {
@@ -48,8 +45,8 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/hello", defaults={"name"="World"}),
-     * @Route("/hello/{name}", name="_demo_secured_hello")
+     * @Route("/efc/hello", defaults={"name"="World"}),
+     * @Route("/efc/hello/{name}", name="efc_secured_hello")
      * @Template()
      */
     public function helloAction($name)
@@ -58,7 +55,7 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/hello/admin/{name}", name="_demo_secured_hello_admin")
+     * @Route("/efc/hello/admin/{name}", name="efc_secured_hello_admin")
      * @Template()
      */
     public function helloadminAction($name)

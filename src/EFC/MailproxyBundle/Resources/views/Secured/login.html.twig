@@ -1,7 +1,9 @@
-{% extends 'AcmeDemoBundle::layout.html.twig' %}
+{% extends 'EFCMailproxyBundle::layout.html.twig' %}
 
 {% block content %}
     <h1 class="title">Login</h1>
+
+    <p>Please log in</p>
 
     <p>
         Choose between two default users: <em>user/userpass</em> <small>(ROLE_USER)</small> or <em>admin/adminpass</em> <small>(ROLE_ADMIN)</small>
@@ -11,7 +13,7 @@
         <div class="error">{{ error.message }}</div>
     {% endif %}
 
-    <form action="{{ path("_security_check") }}" method="post" id="login">
+    <form action="{{ path("efc_security_check") }}" method="post" id="login">
         <div>
             <label for="username">Username</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />
