@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+/**
+ * @Route("/efc")
+ */
 class SecuredController extends Controller
 {
     /**
@@ -45,8 +48,8 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/efc/hello", defaults={"name"="World"}),
-     * @Route("/efc/hello/{name}", name="efc_secured_hello")
+     * @Route("/hello", name="efc_secured_hello_0", defaults={"name"="World"}),
+     * @Route("/hello/{name}", name="efc_secured_hello", defaults={"name"="World"})
      * @Template()
      */
     public function helloAction($name)
@@ -55,7 +58,7 @@ class SecuredController extends Controller
     }
 
     /**
-     * @Route("/efc/hello/admin/{name}", name="efc_secured_hello_admin")
+     * @Route("/hello/admin/{name}", name="efc_secured_hello_admin")
      * @Template()
      */
     public function helloadminAction($name)

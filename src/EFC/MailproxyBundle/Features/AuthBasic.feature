@@ -13,5 +13,5 @@ Background:
 
 Scenario: I can authenticate myself by entering right password
   Given I am on the homepage
-  When I go to "/account/Eldar" and enter "admin" and "ifgrfc" to browser password box
+  When I go to "/account/Eldar" and enter "admin" and "adminpass" to browser password box
   Then I should see "logged in"

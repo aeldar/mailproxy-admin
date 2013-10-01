@@ -1,7 +1,11 @@
-efc_mailproxy_homepage:
-    pattern:  /account/{username}
-    defaults: { _controller: EFCMailproxyBundle:Default:index }
+#efc_mailproxy_homepage:
+#    pattern:  /account/{username}
+#    defaults: { _controller: EFCMailproxyBundle:Default:index }
 
-_account_secured:
+efc_welcome:
+    pattern:  /
+    defaults: { _controller: EFCMailproxyBundle:Default:welcome }
+
+efc_secured:
     resource: "@EFCMailproxyBundle/Controller/SecuredController.php"
     type:     annotation

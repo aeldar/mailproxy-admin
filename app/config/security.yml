@@ -11,31 +11,31 @@ security:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: ifgrfc, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        #login:
-        #    pattern:  ^/login$
-        #    security: false
+        login:
+            pattern:  ^/efc/login$
+            security: false
 
         secured_area:
-            #pattern:    ^/demo/secured/
-            pattern: ^/account/
+            pattern: ^/efc/
             form_login:
                 check_path: efc_security_check
                 login_path: efc_login
             logout:
                 path:   efc_logout
-                target: _welcome
+                target: efc_welcome
+                invalidate_session: false # due to bug in PHP (https://groups.google.com/forum/#!topic/symfony-devs/Q-f0lKT7OZ8)
             anonymous: ~
             #http_basic:
             #    realm: "Secured EFC Mailproxy Area"
 
     access_control:
-        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
-        - { path: ^/account/, roles: ROLE_ADMIN }
+        #- { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
+        - { path: ^/efc/hello/admin/, roles: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

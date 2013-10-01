@@ -1,6 +1,13 @@
 {% extends "::base.html.twig" %}
 
+{% block body %}
+
 {% block content_header %}
     {{ parent() }}
-    <li>logged in as <strong>{{ app.user ? app.user.username : 'Anonymous' }}</strong> - <a href="{{ path('_account_logout') }}">Logout</a></li>
+    <li>logged in as <strong>{{ app.user ? app.user.username : 'Anonymous' }}</strong> - <a href="{{ path('efc_logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block content %}kakaka
+{% endblock %}
+
 {% endblock %}
